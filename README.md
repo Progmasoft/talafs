@@ -8,19 +8,19 @@ repository also holds the layout of a TalaOS installation:
 
 ```text
 /
-├── bin -> usr/bin/           Essential user commands
+├── bin -> usr/bin/           Base system user commands
 ├── boot/                     Bootloader, kernel, boot configuration
 ├── dev/                      Device files
 ├── etc/                      Base system configuration
 ├── home -> usr/home/         User home directories
-├── lib -> usr/lib/           Essential system libraries
-├── libexec -> usr/libexec/   Essential system utilities
+├── lib -> usr/lib/           System libraries
+├── libexec -> usr/libexec/   System helper programs
 ├── media/                    Removable media mount points
 ├── mnt/                      Temporary mount point
 ├── proc/                     Process filesystem (optional mount)
 ├── rescue/                   Emergency recovery utilities
 ├── root/                     Root user's home directory
-├── sbin -> usr/sbin/         Essential administrative utilities
+├── sbin -> usr/sbin/         System administrative commands
 ├── tmp/                      Temporary files
 ├── usr/
 │   ├── bin/                  Base system user commands
@@ -45,6 +45,9 @@ repository also holds the layout of a TalaOS installation:
     ├── spool/                Queued jobs
     └── tmp/                  Persistent temporary files
 ```
+
+`bin`, `home`, `lib`, `libexec` and `sbin` at the root are symbolic links into `/usr`, so each has the description of
+the directory it points to.
 
 It is written in GNU99 under the
 [Progmasoft Core C Coding Guidelines](https://github.com/Progmasoft/progmasoft-cpp) and built with BSD Make.
